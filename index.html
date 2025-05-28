@@ -127,7 +127,8 @@
   </section>
 
   <script>
-    function createFallingCoin() {
+    // Spadające coiny tylko przez pierwsze 6 sekund po załadowaniu strony
+    const coinInterval = setInterval(() => {
       const coin = document.createElement('img');
       coin.src = '1000007043.png';
       coin.classList.add('falling');
@@ -139,9 +140,10 @@
       setTimeout(() => {
         document.body.removeChild(coin);
       }, 6000);
-    }
+    }, 300);
 
-    setInterval(createFallingCoin, 300);
+    // Zatrzymaj efekt po 6 sekundach
+    setTimeout(() => clearInterval(coinInterval), 6000);
   </script>
 </body>
 </html>
