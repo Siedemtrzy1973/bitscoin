@@ -1,0 +1,36 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #f4f4f4;
+}
+header.hero {
+  text-align: center;
+  padding: 2rem;
+  background: url('assets/background.jpg') no-repeat center center/cover;
+}
+.logo {
+  width: 100px;
+}
+section {
+  padding: 2rem;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #111;
+}
+form input, form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  background: #ffd700;
+  border: none;
+  cursor: pointer;
+}
