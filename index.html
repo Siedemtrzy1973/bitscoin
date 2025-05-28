@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BitsCoin</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
@@ -22,16 +21,41 @@
       max-width: 250px;
     }
 
-    h1 {
+    header, section {
       text-align: center;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
       color: #2b2b2b;
     }
 
-    p {
-      text-align: center;
-      max-width: 700px;
-      margin: 20px auto;
+    p, li, a {
       color: #444;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #2b2b2b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    form input, form textarea {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     .falling {
@@ -54,13 +78,58 @@
   <div class="logo">
     <img src="1000007043.png" alt="BitsCoin Logo">
   </div>
-  <h1>BitsCoin</h1>
-  <p>BitsCoin - Decentralized Future. Bezpieczna, szybka i przyszłościowa kryptowaluta zbudowana na fundamentach wolności i innowacji.</p>
+
+  <header>
+    <h1>BitsCoin</h1>
+    <p>BitsCoin - Decentralized Future. Bezpieczna, szybka i przyszłościowa kryptowaluta zbudowana na fundamentach wolności i innowacji.</p>
+  </header>
+
+  <section>
+    <h2>O projekcie</h2>
+    <p>BitsCoin to nowoczesna kryptowaluta wykorzystująca SHA-256, stworzoną dla świata przyszłości, gdzie decentralizacja i prywatność są podstawą.</p>
+  </section>
+
+  <section>
+    <h2>Roadmap</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li>✅ Czerwiec 2025 – Start projektu</li>
+      <li>🚧 Czerwiec 2025 – Rozwój</li>
+      <li>🚀 Lipiec 2025 – Uruchomienie sieci</li>
+      <li>🌍 Lipiec 2025 – Ekspansja i realne zastosowania</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Zespół</h2>
+    <p>Twórca projektu: SiedemTrzy</p>
+  </section>
+
+  <section class="buttons">
+    <h2>Portfel i dokumentacja</h2>
+    <a href="#" onclick="alert('Portfel wkrótce dostępny')">Pobierz portfel</a>
+    <a href="#" onclick="alert('Whitepaper dostępny wkrótce')">Whitepaper</a>
+  </section>
+
+  <section class="social">
+    <h2>Znajdź nas</h2>
+    <a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">Facebook</a>
+    <!-- Tu możesz dodać więcej linków do social mediów -->
+  </section>
+
+  <section>
+    <h2>Kontakt</h2>
+    <form action="mailto:siedemtrzy73@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Twoje imię" required>
+      <input type="email" name="email" placeholder="Twój email" required>
+      <textarea name="message" rows="4" placeholder="Wiadomość" required></textarea>
+      <input type="submit" value="Wyślij">
+    </form>
+  </section>
 
   <script>
     function createFallingCoin() {
       const coin = document.createElement('img');
-      coin.src = '1000007043.png'; // Możesz tu użyć innej ikony monety BSC
+      coin.src = '1000007043.png';
       coin.classList.add('falling');
       coin.style.left = Math.random() * window.innerWidth + 'px';
       coin.style.animationDuration = (3 + Math.random() * 3) + 's';
