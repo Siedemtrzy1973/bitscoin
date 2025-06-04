@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitsCoin (BSC) - Official Site</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner">
+        <h1>BitsCoin (BSC)</h1>
+        <p>Proof of Work Cryptocurrency | SHA-256 | 50 BSC per block</p>
+        <nav>
+            <a href="index.html">PL</a> | <a href="index-en.html">EN</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>About</h2>
+            <p>BitsCoin is a new SHA-256 Proof of Work cryptocurrency, with 50 BSC block reward and 300 seconds per block. Total supply is 31 million BSC.</p>
+        </section>
+
+        <section>
+            <h2>Download Wallet</h2>
+            <ul>
+                <li><a href="BitsCoin-Qt.AppImage">Linux (.AppImage)</a> – coming soon</li>
+                <li><a href="#">Windows (.exe)</a> – coming soon</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Explorer</h2>
+            <p><a href="#">explorer.bitscoin.pl</a> – coming soon</p>
+        </section>
+
+        <section>
+            <h2>Mining Pool</h2>
+            <p><a href="https://bitscoin.online" target="_blank">bitscoin.online</a> – Your SHA-256 mining pool (3% fee)</p>
+        </section>
+
+        <section id="mining">
+            <h2>How to Mine BitsCoin</h2>
+            <ol>
+                <li>
+                    <strong>Download the wallet</strong>:
+                    <ul>
+                        <li><a href="BitsCoin-Qt.AppImage">BitsCoin-Qt.AppImage (Linux)</a></li>
+                        <li><a href="#">BitsCoin-Qt.exe (Windows)</a></li>
+                    </ul>
+                </li>
+                <li><strong>Generate a BSC address</strong> in the wallet (Menu → Receive). Copy that address.</li>
+                <li>
+                    <strong>Download mining software</strong>:
+                    <ul>
+                        <li><a href="https://github.com/LIMXTEC/cpuminer-opt/releases">cpuminer-opt</a></li>
+                        <li><a href="https://github.com/ckolivas/cgminer">cgminer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Run the miner</strong> with parameters:
+                    <pre>cpuminer-avx2 -a sha256d   -o stratum+tcp://pool.bitscoin.online:3333   -u YOUR_BSC_ADDRESS -p x -t THREADS</pre>
+                    Where:
+                    <ul>
+                        <li><code>-a sha256d</code> → SHA-256 algorithm</li>
+                        <li><code>-o</code> → pool address (stratum)</li>
+                        <li><code>-u YOUR_BSC_ADDRESS</code> → your BSC address from wallet</li>
+                        <li><code>-p x</code> → password (usually <code>x</code>)</li>
+                        <li><code>-t THREADS</code> → number of CPU threads</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Check the pool dashboard</strong>: <a href="https://pool.bitscoin.online" target="_blank">pool.bitscoin.online</a> – status, hash rate, payouts.
+                </li>
+            </ol>
+            <p>If you encounter issues, email <a href="mailto:contact@bitscoin.pl">contact@bitscoin.pl</a></p>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:contact@bitscoin.pl">contact@bitscoin.pl</a></p>
+        </section>
+
+        <section>
+            <h2>Follow Us</h2>
+            <p><a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">👉 Visit us on Facebook</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 BitsCoin. Project Grupa SiedemTrzy.</p>
+    </footer>
+</body>
+</html>
