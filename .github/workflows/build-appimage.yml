@@ -1,0 +1,96 @@
+name: Build BitsCoin-Qt AppImage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_appimage:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            build-essential \
+            pkg-config \
+            autoconf \
+            automake \
+            libtool \
+            git \
+            wget \
+            curl \
+            python3 \
+            libssl-dev \
+            libboost-all-dev \
+            libqt5gui5 \
+            libqt5core5a \
+            libqt5dbus5 \
+            qttools5-dev-tools \
+            libqt5webkit5-dev \
+            libqt5svg5-dev \
+            libevent-dev \
+            libminiupnpc-dev \
+            libqrencode-dev \
+            zlib1g-dev \
+            unzip \
+            bsdmainutils
+
+      - name: Set up build directory
+        run: |
+          rm -rf bitscoin-build
+          mkdir -p bitscoin-build
+          cp -R . bitscoin-build
+        shell: bash
+
+      - name: Autogen & Configure
+        working-directory: bitscoin-build
+        run: |
+          chmod +x autogen.sh
+          ./autogen.sh
+          ./configure \
+            --with-gui=qt5 \
+            --disable-tests \
+            --disable-bench \
+            --enable-upnp-default
+
+      - name: Build BitsCoin Core & Qt
+        working-directory: bitscoin-build
+        run: |
+          make -j$(nproc)
+
+      - name: Download linuxdeployqt
+        run: |
+          cd ~
+          wget -q https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage
+          chmod +x linuxdeployqt-continuous-x86_64.AppImage
+
+      - name: Prepare AppDir
+        run: |
+          cd bitscoin-build
+          rm -rf AppDir
+          mkdir -p AppDir/usr/bin
+          cp src/qt/bitscoin-qt AppDir/usr/bin/
+
+      - name: Package BitsCoin-Qt into AppImage
+        working-directory: bitscoin-build/AppDir
+        run: |
+          ~/linuxdeployqt-continuous-x86_64.AppImage \
+            usr/bin/bitscoin-qt \
+            -appimage \
+            -verbose=1
+
+      - name: Upload AppImage artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: BitsCoin-Qt-AppImage
+          path: bitscoin-build/AppDir/*.AppImage
+
+      - name: Check AppImage file
+        run: |
+          ls -lh bitscoin-build/AppDir/*.AppImage
+          file bitscoin-build/AppDir/*.AppImage
