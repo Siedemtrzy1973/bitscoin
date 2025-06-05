@@ -85,7 +85,7 @@ jobs:
             -verbose=1
 
       - name: Upload AppImage artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: BitsCoin-Qt-AppImage
           path: bitscoin-build/AppDir/*.AppImage
