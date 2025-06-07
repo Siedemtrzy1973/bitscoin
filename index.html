@@ -27,7 +27,9 @@
             <h2>Pobierz portfel</h2>
             <ul>
                 <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage" target="_blank" rel="noopener noreferrer">Linux (.AppImage)</a></li>
-                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.exe" target="_blank" rel="noopener noreferrer">Windows (.exe)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc" target="_blank" rel="noopener noreferrer">Podpis GPG (.asc) — Linux</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank" rel="noopener noreferrer">Windows (.zip)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc" target="_blank" rel="noopener noreferrer">Podpis GPG (.asc) — Windows</a></li>
             </ul>
         </section>
 
@@ -38,7 +40,7 @@
 
         <section>
             <h2>Kopalnia</h2>
-            <p><a href="https://bitscoin.online" target="_blank" rel="noopener noreferrer">bitscoin.online</a> – Twoja własna kopalnia SHA-256 (3% prowizji)</p>
+            <p><a href="https://pool.bitscoin.online" target="_blank" rel="noopener noreferrer">pool.bitscoin.online</a> – Oficjalna kopalnia SHA-256 (3% prowizji)</p>
         </section>
 
         <section id="kopalnia">
@@ -48,7 +50,7 @@
                     <strong>Pobierz portfel</strong>:
                     <ul>
                         <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage" target="_blank" rel="noopener noreferrer">BitsCoin-Qt.AppImage (Linux)</a></li>
-                        <li><a href="https://bitscoin.online/download/BitsCoin-Qt.exe" target="_blank" rel="noopener noreferrer">BitsCoin-Qt.exe (Windows)</a></li>
+                        <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank" rel="noopener noreferrer">BitsCoin-Qt ZIP (Windows)</a></li>
                     </ul>
                 </li>
                 <li><strong>Wygeneruj adres BSC</strong> w portfelu (Menu → Odbierz). Skopiuj wygenerowany adres.</li>
@@ -61,14 +63,15 @@
                 </li>
                 <li>
                     <strong>Uruchom koparkę</strong> z parametrami:
-                    <pre>cpuminer-avx2 -a sha256d   -o stratum+tcp://pool.bitscoin.online:3333   -u TWÓJ_ADRES_BSC -p x -t LICZBA_WĄTKÓW</pre>
-                    Gdzie:
+                    <pre>cgminer -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x</pre>
+                    <p>Lub dla cpuminer:</p>
+                    <pre>cpuminer-avx2 -a sha256d -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x -t LICZBA_WĄTKÓW</pre>
                     <ul>
                         <li><code>-a sha256d</code> → algorytm SHA-256</li>
                         <li><code>-o</code> → adres puli (stratum)</li>
                         <li><code>-u TWÓJ_ADRES_BSC</code> → Twój adres BSC z portfela</li>
                         <li><code>-p x</code> → hasło (zwykle <code>x</code>)</li>
-                        <li><code>-t LICZBA_WĄTKÓW</code> → liczba wątków CPU</li>
+                        <li><code>-t LICZBA_WĄTKÓW</code> → liczba wątków CPU (dla cpuminer)</li>
                     </ul>
                 </li>
                 <li>
@@ -93,6 +96,24 @@
                 </li>
             </ol>
             <p>W razie problemów napisz: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+        </section>
+
+        <section id="weryfikacja">
+            <h2>Weryfikacja podpisu GPG</h2>
+            <p>Dla bezpieczeństwa zalecamy weryfikację podpisu GPG pobranego portfela BitsCoin.</p>
+            <p>1. Pobierz portfel i podpis:</p>
+            <pre>wget https://bitscoin.online/download/BitsCoin-Qt.AppImage
+wget https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc</pre>
+            <p>lub dla wersji Windows:</p>
+            <pre>wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip
+wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc</pre>
+            <p>2. Importuj klucz publiczny BitsCoin (jeśli jeszcze tego nie zrobiłeś):</p>
+            <pre>gpg --keyserver keyserver.ubuntu.com --recv-keys TWÓJ_KEY_ID</pre>
+            <p>3. Zweryfikuj podpis:</p>
+            <pre>gpg --verify BitsCoin-Qt.AppImage.asc BitsCoin-Qt.AppImage</pre>
+            <p>lub dla Windows ZIP:</p>
+            <pre>gpg --verify BitsCoin-Qt-Win64.zip.asc BitsCoin-Qt-Win64.zip</pre>
+            <p>Poprawny podpis oznacza, że plik pochodzi od oficjalnego zespołu BitsCoin i nie został zmodyfikowany.</p>
         </section>
 
         <section>
