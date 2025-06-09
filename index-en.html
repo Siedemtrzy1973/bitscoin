@@ -1,15 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitsCoin (BSC) - Official Site</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BitsCoin (BSC) - Official Website</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <style>
+        .sidebar {
+          position: fixed;
+          left: 0; top: 120px;
+          width: 220px;
+          background: #fffbe6;
+          color: #8a6d00;
+          border-radius: 12px;
+          padding: 20px 0;
+          box-shadow: 0 2px 16px #ffd70080;
+          z-index: 1000;
+          border: 2px solid #ffd70055;
+        }
+        .sidebar ul { list-style: none; margin: 0; padding: 0; }
+        .sidebar ul li { margin: 16px 0; }
+        .sidebar ul li a {
+          color: #b99309;
+          font-size: 1.1em;
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+          padding: 8px 20px;
+          display: block;
+          border-radius: 7px;
+        }
+        .sidebar ul li a:hover {
+          color: #fff;
+          background: #ffd700;
+        }
+        @media (max-width: 900px) {
+          .sidebar { position: static; width: 100%; border-radius: 0; box-shadow: none; padding: 12px; top:0; }
+        }
+        @media (min-width: 901px) {
+          body { margin-left: 240px; }
+        }
+        #chat, #ogloszenia {
+            background: linear-gradient(135deg,#fffbe6 70%,#fff7c2 100%);
+            border-radius: 16px;
+            padding: 32px 30px 30px 30px;
+            margin: 42px 0;
+            box-shadow: 0 2px 22px #ffd70020;
+            border: 1.5px solid #ffe066;
+        }
+        #chat h2, #ogloszenia h2 {
+            color: #b99309;
+            letter-spacing: 0.03em;
+            margin-top: 0;
+        }
+        #chat p, #ogloszenia p, #ogloszenia ul {
+            color: #826200;
+            font-size: 1.08em;
+        }
+        #ogloszenia ul li {
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #ffe066;
+        }
+        #chat iframe {
+            background: #fffde4;
+            border: 2px solid #ffe066;
+            border-radius: 9px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Sidebar menu -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#chat">🗨️ User Chat</a></li>
+        <li><a href="#ogloszenia">📢 Mining Equipment Ads</a></li>
+      </ul>
+    </nav>
+
     <header>
-        <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner">
+        <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner" />
         <h1>BitsCoin (BSC)</h1>
         <p>Proof of Work Cryptocurrency | SHA-256 | 50 BSC per block</p>
         <nav>
@@ -18,16 +88,36 @@
     </header>
 
     <main>
+        <!-- NEW SECTIONS -->
+        <section id="chat">
+          <h2>🗨️ BitsCoin User Chat</h2>
+          <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;"></iframe>
+          <p>Join the chat and connect with other BitsCoin users! (tlk.io/bitscoin)</p>
+        </section>
+        <section id="ogloszenia">
+          <h2>📢 Mining Equipment Ads (Buy/Sell ASICs)</h2>
+          <ul>
+            <li><b>Buying</b> – Antminer S9, contact: <a href="mailto:janek@example.com">janek@example.com</a></li>
+            <li><b>Selling</b> – Innosilicon T2T, contact: 600-xxx-xxx</li>
+            <li><b>Buying</b> – RX580 8GB, contact: <a href="mailto:adam@example.com">adam@example.com</a></li>
+            <!-- Add more ads here -->
+          </ul>
+          <p>Want to add your ad? Email us at <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+        </section>
+        <!-- /NEW SECTIONS -->
+
         <section>
             <h2>About</h2>
-            <p>BitsCoin is a new SHA-256 Proof of Work cryptocurrency, with 50 BSC block reward and 300 seconds per block. Total supply is 31 million BSC.</p>
+            <p>BitsCoin is a new SHA-256-based Proof of Work cryptocurrency with a reward of 50 BSC per block and a block time of 300 seconds. The total supply is 31 million BSC.</p>
         </section>
 
         <section>
             <h2>Download Wallet</h2>
             <ul>
-                <li><a href="BitsCoin-Qt.AppImage">Linux (.AppImage)</a> – coming soon</li>
-                <li><a href="#">Windows (.exe)</a> – coming soon</li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage" target="_blank" rel="noopener noreferrer">Linux (.AppImage)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc" target="_blank" rel="noopener noreferrer">GPG Signature (.asc) — Linux</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank" rel="noopener noreferrer">Windows (.zip)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc" target="_blank" rel="noopener noreferrer">GPG Signature (.asc) — Windows</a></li>
             </ul>
         </section>
 
@@ -38,54 +128,90 @@
 
         <section>
             <h2>Mining Pool</h2>
-            <p><a href="https://bitscoin.online" target="_blank">bitscoin.online</a> – Your SHA-256 mining pool (3% fee)</p>
+            <p><a href="https://pool.bitscoin.online" target="_blank" rel="noopener noreferrer">pool.bitscoin.online</a> – Official SHA-256 Pool (3% fee)</p>
         </section>
 
-        <section id="mining">
-            <h2>How to Mine BitsCoin</h2>
+        <section id="kopalnia">
+            <h2>How to mine BitsCoin?</h2>
             <ol>
                 <li>
                     <strong>Download the wallet</strong>:
                     <ul>
-                        <li><a href="BitsCoin-Qt.AppImage">BitsCoin-Qt.AppImage (Linux)</a></li>
-                        <li><a href="#">BitsCoin-Qt.exe (Windows)</a></li>
+                        <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage" target="_blank" rel="noopener noreferrer">BitsCoin-Qt.AppImage (Linux)</a></li>
+                        <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank" rel="noopener noreferrer">BitsCoin-Qt ZIP (Windows)</a></li>
                     </ul>
                 </li>
-                <li><strong>Generate a BSC address</strong> in the wallet (Menu → Receive). Copy that address.</li>
+                <li><strong>Generate a BSC address</strong> in the wallet (Menu → Receive). Copy the generated address.</li>
                 <li>
                     <strong>Download mining software</strong>:
                     <ul>
-                        <li><a href="https://github.com/LIMXTEC/cpuminer-opt/releases">cpuminer-opt</a></li>
-                        <li><a href="https://github.com/ckolivas/cgminer">cgminer</a></li>
+                        <li><a href="https://github.com/LIMXTEC/cpuminer-opt/releases" target="_blank" rel="noopener noreferrer">cpuminer-opt</a></li>
+                        <li><a href="https://github.com/ckolivas/cgminer" target="_blank" rel="noopener noreferrer">cgminer</a></li>
                     </ul>
                 </li>
                 <li>
-                    <strong>Run the miner</strong> with parameters:
-                    <pre>cpuminer-avx2 -a sha256d   -o stratum+tcp://pool.bitscoin.online:3333   -u YOUR_BSC_ADDRESS -p x -t THREADS</pre>
-                    Where:
+                    <strong>Start mining</strong> with the following parameters:
+                    <pre>cgminer -o stratum+tcp://pool.bitscoin.online:3333 -u YOUR_BSC_ADDRESS -p x</pre>
+                    <p>Or for cpuminer:</p>
+                    <pre>cpuminer-avx2 -a sha256d -o stratum+tcp://pool.bitscoin.online:3333 -u YOUR_BSC_ADDRESS -p x -t THREADS</pre>
                     <ul>
-                        <li><code>-a sha256d</code> → SHA-256 algorithm</li>
+                        <li><code>-a sha256d</code> → algorithm SHA-256</li>
                         <li><code>-o</code> → pool address (stratum)</li>
-                        <li><code>-u YOUR_BSC_ADDRESS</code> → your BSC address from wallet</li>
+                        <li><code>-u YOUR_BSC_ADDRESS</code> → Your BSC address from wallet</li>
                         <li><code>-p x</code> → password (usually <code>x</code>)</li>
-                        <li><code>-t THREADS</code> → number of CPU threads</li>
+                        <li><code>-t THREADS</code> → number of CPU threads (for cpuminer)</li>
                     </ul>
                 </li>
                 <li>
-                    <strong>Check the pool dashboard</strong>: <a href="https://pool.bitscoin.online" target="_blank">pool.bitscoin.online</a> – status, hash rate, payouts.
+                    <strong>Check the pool dashboard</strong>:
+                    <div style="text-align: center; margin: 10px 0;">
+                        <a href="https://pool.bitscoin.online/dashboard" target="_blank" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background-color: #FFD700;
+                            color: #000000;
+                            text-decoration: none;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                            transition: background-color 0.3s ease;
+                        "
+                        onmouseover="this.style.backgroundColor='#e6c200';"
+                        onmouseout="this.style.backgroundColor='#FFD700';"
+                        >🚀 Open Mining Dashboard 🚀</a>
+                    </div>
                 </li>
             </ol>
-            <p>If you encounter issues, email <a href="mailto:contact@bitscoin.pl">contact@bitscoin.pl</a></p>
+            <p>Need help? Contact: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+        </section>
+
+        <section id="weryfikacja">
+            <h2>GPG Signature Verification</h2>
+            <p>For security, we recommend verifying the GPG signature of the downloaded BitsCoin wallet.</p>
+            <p>1. Download the wallet and signature:</p>
+            <pre>wget https://bitscoin.online/download/BitsCoin-Qt.AppImage
+wget https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc</pre>
+            <p>or for Windows version:</p>
+            <pre>wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip
+wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc</pre>
+            <p>2. Import the BitsCoin public key (if you haven't already):</p>
+            <pre>gpg --keyserver keyserver.ubuntu.com --recv-keys YOUR_KEY_ID</pre>
+            <p>3. Verify the signature:</p>
+            <pre>gpg --verify BitsCoin-Qt.AppImage.asc BitsCoin-Qt.AppImage</pre>
+            <p>or for Windows ZIP:</p>
+            <pre>gpg --verify BitsCoin-Qt-Win64.zip.asc BitsCoin-Qt-Win64.zip</pre>
+            <p>A valid signature means the file comes from the official BitsCoin team and has not been modified.</p>
         </section>
 
         <section>
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:contact@bitscoin.pl">contact@bitscoin.pl</a></p>
+            <p>Email: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
         </section>
 
         <section>
-            <h2>Follow Us</h2>
-            <p><a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">👉 Visit us on Facebook</a></p>
+            <h2>Follow us</h2>
+            <p><a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank" rel="noopener noreferrer">👉 Visit us on Facebook</a></p>
         </section>
     </main>
 
