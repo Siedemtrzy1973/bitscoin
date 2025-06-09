@@ -12,26 +12,28 @@
           position: fixed;
           left: 0; top: 120px;
           width: 220px;
-          background: #191919;
-          color: #fff;
+          background: #fffbe6;
+          color: #8a6d00;
           border-radius: 12px;
           padding: 20px 0;
-          box-shadow: 0 2px 12px #0004;
+          box-shadow: 0 2px 16px #ffd70080;
           z-index: 1000;
+          border: 2px solid #ffd70055;
         }
         .sidebar ul { list-style: none; margin: 0; padding: 0; }
         .sidebar ul li { margin: 16px 0; }
         .sidebar ul li a {
-          color: #ffd700;
+          color: #b99309;
           font-size: 1.1em;
           text-decoration: none;
-          transition: color 0.2s;
+          transition: color 0.2s, background 0.2s;
           padding: 8px 20px;
           display: block;
+          border-radius: 7px;
         }
         .sidebar ul li a:hover {
           color: #fff;
-          background: #222;
+          background: #ffd700;
         }
         @media (max-width: 900px) {
           .sidebar { position: static; width: 100%; border-radius: 0; box-shadow: none; padding: 12px; top:0; }
@@ -39,9 +41,34 @@
         @media (min-width: 901px) {
           body { margin-left: 240px; }
         }
-        /* Sekcje specjalne */
-        #chat, #ogloszenia { background: #181818; border-radius: 14px; padding: 30px; margin: 40px 0; box-shadow: 0 2px 18px #0003;}
-        #chat h2, #ogloszenia h2 { color: #ffd700; }
+        /* Sekcje specjalne - jasne złote tło */
+        #chat, #ogloszenia {
+            background: linear-gradient(135deg,#fffbe6 70%,#fff7c2 100%);
+            border-radius: 16px;
+            padding: 32px 30px 30px 30px;
+            margin: 42px 0;
+            box-shadow: 0 2px 22px #ffd70020;
+            border: 1.5px solid #ffe066;
+        }
+        #chat h2, #ogloszenia h2 {
+            color: #b99309;
+            letter-spacing: 0.03em;
+            margin-top: 0;
+        }
+        #chat p, #ogloszenia p, #ogloszenia ul {
+            color: #826200;
+            font-size: 1.08em;
+        }
+        #ogloszenia ul li {
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #ffe066;
+        }
+        #chat iframe {
+            background: #fffde4;
+            border: 2px solid #ffe066;
+            border-radius: 9px;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +93,7 @@
         <!-- NOWE SEKCJE -->
         <section id="chat">
           <h2>🗨️ Czat użytkowników BitsCoin</h2>
-          <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;border-radius:8px;background:#222;"></iframe>
+          <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;"></iframe>
           <p>Wejdź na czat i rozmawiaj z innymi użytkownikami BitsCoin! (tlk.io/bitscoin)</p>
         </section>
         <section id="ogloszenia">
