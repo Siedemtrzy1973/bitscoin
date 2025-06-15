@@ -1,148 +1,142 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BitsCoin (BSC) - Oficjalna Strona</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
-  <style>
-    body { font-family: sans-serif; background: #eef6ff; color: #333; margin: 0; }
-    header, footer { background: #003366; color: #fff; padding: 20px; text-align: center; }
-    header h1 { margin: 10px 0; color: #ffd700; }
-    .banner { max-width: 100%; height: auto; }
-    nav.sidebar {
-      position: fixed;
-      left: 0; top: 120px;
-      width: 220px;
-      background: #fffbe6;
-      color: #8a6d00;
-      border-radius: 12px;
-      padding: 20px 0;
-      box-shadow: 0 2px 16px #ffd70080;
-      z-index: 1000;
-      border: 2px solid #ffd70055;
-    }
-    nav.sidebar ul { list-style: none; margin: 0; padding: 0; }
-    nav.sidebar ul li { margin: 16px 0; }
-    nav.sidebar ul li a {
-      color: #b99309;
-      font-size: 1.1em;
-      text-decoration: none;
-      transition: color 0.2s, background 0.2s;
-      padding: 8px 20px;
-      display: block;
-      border-radius: 7px;
-    }
-    nav.sidebar ul li a:hover {
-      color: #fff;
-      background: #ffd700;
-    }
-    @media (max-width: 900px) {
-      nav.sidebar { position: static; width: 100%; border-radius: 0; box-shadow: none; padding: 12px; top:0; }
-    }
-    @media (min-width: 901px) {
-      body { margin-left: 240px; }
-    }
-    section {
-      padding: 30px;
-      background: #ffffff;
-      margin: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-    }
-    h2 { color: #003366; }
-    a { color: #004080; }
-    pre { background: #f7f7f7; padding: 10px; overflow-x: auto; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BitsCoin (BSC) - Oficjalna Strona</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <style>
+        /* Menu boczne i styl identyczny jak w oryginalnej wersji EN */
+        .sidebar {
+          position: fixed;
+          left: 0; top: 120px;
+          width: 220px;
+          background: #fffbe6;
+          color: #8a6d00;
+          border-radius: 12px;
+          padding: 20px 0;
+          box-shadow: 0 2px 16px #ffd70080;
+          z-index: 1000;
+          border: 2px solid #ffd70055;
+        }
+        .sidebar ul { list-style: none; margin: 0; padding: 0; }
+        .sidebar ul li { margin: 16px 0; }
+        .sidebar ul li a {
+          color: #b99309;
+          font-size: 1.1em;
+          text-decoration: none;
+          transition: color 0.2s, background 0.2s;
+          padding: 8px 20px;
+          display: block;
+          border-radius: 7px;
+        }
+        .sidebar ul li a:hover {
+          color: #fff;
+          background: #ffd700;
+        }
+        @media (max-width: 900px) {
+          .sidebar { position: static; width: 100%; border-radius: 0; box-shadow: none; padding: 12px; top:0; }
+        }
+        @media (min-width: 901px) {
+          body { margin-left: 240px; }
+        }
+        #chat, #ogloszenia {
+            background: linear-gradient(135deg,#fffbe6 70%,#fff7c2 100%);
+            border-radius: 16px;
+            padding: 32px 30px 30px 30px;
+            margin: 42px 0;
+            box-shadow: 0 2px 22px #ffd70020;
+            border: 1.5px solid #ffe066;
+        }
+        #chat h2, #ogloszenia h2 {
+            color: #b99309;
+            letter-spacing: 0.03em;
+            margin-top: 0;
+        }
+        #chat p, #ogloszenia p, #ogloszenia ul {
+            color: #826200;
+            font-size: 1.08em;
+        }
+        #ogloszenia ul li {
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #ffe066;
+        }
+        #chat iframe {
+            background: #fffde4;
+            border: 2px solid #ffe066;
+            border-radius: 9px;
+        }
+    </style>
 </head>
 <body>
-  <nav class="sidebar">
-    <ul>
-      <li><a href="#chat">🗨️ Czat użytkowników</a></li>
-      <li><a href="#ogloszenia">📢 Ogłoszenia</a></li>
-      <li><a href="#kopalnia">⛏️ Kopanie</a></li>
-      <li><a href="#weryfikacja">🔐 Weryfikacja</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner" />
-    <h1>BitsCoin (BSC)</h1>
-    <p>Kryptowaluta Proof of Work | SHA-256 | 50 BSC za blok</p>
-    <p><a href="index.html">PL</a> | <a href="index-en.html">EN</a></p>
-  </header>
-
-  <main>
-    <section id="chat">
-      <h2>🗨️ Czat użytkowników</h2>
-      <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;"></iframe>
-    </section>
-
-    <section id="ogloszenia">
-      <h2>📢 Ogłoszenia sprzętowe</h2>
+    <nav class="sidebar">
       <ul>
-        <li>Kupię Antminer S9 – <a href="mailto:janek@example.com">janek@example.com</a></li>
-        <li>Sprzedam Innosilicon T2T – tel. 600-xxx-xxx</li>
-        <li>Kupię RX580 8GB – <a href="mailto:adam@example.com">adam@example.com</a></li>
+        <li><a href="#chat">🗨️ Czat użytkowników</a></li>
+        <li><a href="#ogloszenia">📢 Ogłoszenia sprzętowe</a></li>
       </ul>
-    </section>
+    </nav>
 
-    <section>
-      <h2>Pobierz portfel BitsCoin</h2>
-      <ul>
-        <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage" target="_blank">Linux AppImage (.AppImage)</a></li>
-        <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank">Windows ZIP (.zip)</a></li>
-        <li><a href="https://bitscoin.online/download/bitscoin-backup.zip" target="_blank">Backup portfela</a></li>
-      </ul>
-    </section>
+    <header>
+        <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner" />
+        <h1>BitsCoin (BSC)</h1>
+        <p>Kryptowaluta Proof of Work | SHA-256 | 50 BSC za blok</p>
+        <nav>
+            <a href="index.html">PL</a> | <a href="index-en.html">EN</a>
+        </nav>
+    </header>
 
-    <section>
-      <h2>Explorer</h2>
-      <p>Wkrótce dostępny pod: <strong>explorer.bitscoin.pl</strong></p>
-    </section>
+    <main>
+        <section id="chat">
+          <h2>🗨️ Czat użytkowników BitsCoin</h2>
+          <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;"></iframe>
+          <p>Dołącz do czatu i porozmawiaj z innymi użytkownikami BitsCoin! (tlk.io/bitscoin)</p>
+        </section>
+        <section id="ogloszenia">
+          <h2>📢 Ogłoszenia sprzętowe (kupię/sprzedam koparki)</h2>
+          <ul>
+            <li><b>Kupię</b> – Antminer S9, kontakt: <a href="mailto:janek@example.com">janek@example.com</a></li>
+            <li><b>Sprzedam</b> – Innosilicon T2T, kontakt: 600-xxx-xxx</li>
+            <li><b>Kupię</b> – RX580 8GB, kontakt: <a href="mailto:adam@example.com">adam@example.com</a></li>
+          </ul>
+          <p>Chcesz dodać ogłoszenie? Napisz na <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+        </section>
 
-    <section>
-      <h2>Kopalnia</h2>
-      <p>Oficjalna pula: <a href="https://pool.bitscoin.online" target="_blank">pool.bitscoin.online</a> (3% prowizji)</p>
-    </section>
+        <section>
+            <h2>O projekcie</h2>
+            <p>BitsCoin to nowa kryptowaluta oparta na SHA-256, Proof of Work, z nagrodą 50 BSC za blok i czasem bloku 300 s. Łączna podaż to 31 milionów BSC.</p>
+        </section>
 
-    <section id="kopalnia">
-      <h2>Jak kopać BitsCoin?</h2>
-      <ol>
-        <li>Pobierz portfel i wygeneruj adres BSC</li>
-        <li>Zainstaluj <a href="https://github.com/LIMXTEC/cpuminer-opt/releases">cpuminer</a> lub <a href="https://github.com/ckolivas/cgminer">cgminer</a></li>
-        <li>Uruchom z parametrami:
-          <pre>cgminer -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x</pre>
-          <pre>cpuminer-avx2 -a sha256d -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x -t LICZBA_WĄTKÓW</pre>
-        </li>
-      </ol>
-    </section>
+        <section>
+            <h2>Pobierz portfel</h2>
+            <ul>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage" target="_blank" rel="noopener noreferrer">Linux (.AppImage)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage.asc" target="_blank" rel="noopener noreferrer">Podpis GPG (.asc) — Linux</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank" rel="noopener noreferrer">Windows (.zip)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc" target="_blank" rel="noopener noreferrer">Podpis GPG (.asc) — Windows</a></li>
+                <li><a href="https://bitscoin.online/download/bitscoin-backup.zip" target="_blank" rel="noopener noreferrer">Backup portfela BitsCoin (ZIP)</a></li>
+            </ul>
+        </section>
 
-    <section id="weryfikacja">
-      <h2>Weryfikacja podpisu GPG</h2>
-      <p>
-        Pobierz plik i podpis:
-        <pre>wget https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage
-wget https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage.asc</pre>
-        Zweryfikuj:
-        <pre>gpg --verify BitsCoin-Core-v0.1-x86_64.AppImage.asc BitsCoin-Core-v0.1-x86_64.AppImage</pre>
-      </p>
-    </section>
+        <section>
+            <h2>Explorer</h2>
+            <p><a href="#">explorer.bitscoin.pl</a> – wkrótce dostępny</p>
+        </section>
 
-    <section>
-      <h2>Kontakt</h2>
-      <p>Email: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
-    </section>
+        <section>
+            <h2>Kopalnia</h2>
+            <p><a href="https://pool.bitscoin.online" target="_blank" rel="noopener noreferrer">pool.bitscoin.online</a> – Oficjalna kopalnia SHA-256 (3% prowizji)</p>
+        </section>
 
-    <section>
-      <h2>Facebook</h2>
-      <p><a href="https://www.facebook.com/profile.php?id=61576327217137">Odwiedź nas na Facebooku</a></p>
-    </section>
-  </main>
+        <!-- Kopanie i weryfikacja podpisu w dalszych częściach -->
+    </main>
 
-  <footer>
-    <p>© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
-  </footer>
+    <footer>
+        <p style="background:#005ea6;color:white;padding:12px;border-radius:6px;text-align:center">© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
+    </footer>
 </body>
 </html>
+
+    
+   
