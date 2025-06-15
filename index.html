@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <style>
-        /* Menu boczne i styl identyczny jak w oryginalnej wersji EN */
         .sidebar {
           position: fixed;
           left: 0; top: 120px;
@@ -71,10 +70,11 @@
     </style>
 </head>
 <body>
+    <!-- Sidebar menu -->
     <nav class="sidebar">
       <ul>
-        <li><a href="#chat">🗨️ Czat użytkowników</a></li>
-        <li><a href="#ogloszenia">📢 Ogłoszenia sprzętowe</a></li>
+        <li><a href="#chat">🗨️ Czat Użytkowników</a></li>
+        <li><a href="#ogloszenia">📢 Ogłoszenia Sprzętu</a></li>
       </ul>
     </nav>
 
@@ -89,55 +89,133 @@
 
     <main>
         <section id="chat">
-          <h2>🗨️ Czat użytkowników BitsCoin</h2>
+          <h2>🗨️ Czat Użytkowników BitsCoin</h2>
           <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;"></iframe>
-          <p>Dołącz do czatu i porozmawiaj z innymi użytkownikami BitsCoin! (tlk.io/bitscoin)</p>
+          <p>Dołącz do rozmowy i poznaj innych użytkowników BitsCoin! (tlk.io/bitscoin)</p>
         </section>
+
         <section id="ogloszenia">
-          <h2>📢 Ogłoszenia sprzętowe (kupię/sprzedam koparki)</h2>
+          <h2>📢 Ogłoszenia sprzętu kopiącego (kupno/sprzedaż)</h2>
           <ul>
-            <li><b>Kupię</b> – Antminer S9, kontakt: <a href="mailto:janek@example.com">janek@example.com</a></li>
-            <li><b>Sprzedam</b> – Innosilicon T2T, kontakt: 600-xxx-xxx</li>
-            <li><b>Kupię</b> – RX580 8GB, kontakt: <a href="mailto:adam@example.com">adam@example.com</a></li>
+            <li><b>Kupno</b> – Antminer S9, kontakt: <a href="mailto:janek@example.com">janek@example.com</a></li>
+            <li><b>Sprzedaż</b> – Innosilicon T2T, kontakt: 600-xxx-xxx</li>
+            <li><b>Kupno</b> – RX580 8GB, kontakt: <a href="mailto:adam@example.com">adam@example.com</a></li>
           </ul>
-          <p>Chcesz dodać ogłoszenie? Napisz na <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+          <p>Chcesz dodać ogłoszenie? Napisz do nas: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
         </section>
 
         <section>
-            <h2>O projekcie</h2>
-            <p>BitsCoin to nowa kryptowaluta oparta na SHA-256, Proof of Work, z nagrodą 50 BSC za blok i czasem bloku 300 s. Łączna podaż to 31 milionów BSC.</p>
+            <h2>O Projekcie</h2>
+            <p>BitsCoin to nowa kryptowaluta Proof of Work oparta na SHA-256 z nagrodą 50 BSC za blok i czasem bloku 300 sekund. Całkowita podaż wynosi 31 milionów BSC.</p>
         </section>
 
-        <section id="download">
-  <h3>Download Wallet</h3>
-  <ul>
-    <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage">Linux (.AppImage)</a></li>
-    <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.asc">GPG Signature (.asc) — Linux</a></li>
-    <li><a href="https://bitscoin.online/download/BitsCoin-Core-Windows-v0.1.zip">Windows (.zip)</a></li>
-    <li><a href="https://bitscoin.online/download/BitsCoin-Core-Windows-v0.1.asc">GPG Signature (.asc) — Windows</a></li>
-    <li><a href="https://bitscoin.online/download/BitsCoin-Wallet-Backup.zip">BitsCoin Wallet Backup (ZIP)</a></li>
-  </ul>
-</section>
-
+        <section>
+            <h2>Pobierz Portfel</h2>
+            <ul>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage" target="_blank">Linux (.AppImage)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc" target="_blank">Podpis GPG (.asc) — Linux</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank">Windows (.zip)</a></li>
+                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc" target="_blank">Podpis GPG (.asc) — Windows</a></li>
+                <li><a href="https://bitscoin.online/download/bitscoin-backup.zip" target="_blank">Kopia zapasowa portfela (ZIP)</a></li>
+            </ul>
+        </section>
 
         <section>
-            <h2>Explorer</h2>
+            <h2>Eksplorator</h2>
             <p><a href="#">explorer.bitscoin.pl</a> – wkrótce dostępny</p>
         </section>
 
         <section>
             <h2>Kopalnia</h2>
-            <p><a href="https://pool.bitscoin.online" target="_blank" rel="noopener noreferrer">pool.bitscoin.online</a> – Oficjalna kopalnia SHA-256 (3% prowizji)</p>
+            <p><a href="https://pool.bitscoin.online" target="_blank">pool.bitscoin.online</a> – Oficjalna kopalnia SHA-256 (prowizja 3%)</p>
         </section>
 
-        <!-- Kopanie i weryfikacja podpisu w dalszych częściach -->
+        <section id="kopalnia">
+            <h2>Jak kopać BitsCoin?</h2>
+            <ol>
+                <li>
+                    <strong>Pobierz portfel</strong>:
+                    <ul>
+                        <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage" target="_blank">BitsCoin-Qt.AppImage (Linux)</a></li>
+                        <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank">BitsCoin-Qt ZIP (Windows)</a></li>
+                    </ul>
+                </li>
+                <li><strong>Wygeneruj adres BSC</strong> w portfelu (Menu → Odbierz). Skopiuj adres.</li>
+                <li>
+                    <strong>Pobierz oprogramowanie do kopania</strong>:
+                    <ul>
+                        <li><a href="https://github.com/LIMXTEC/cpuminer-opt/releases" target="_blank">cpuminer-opt</a></li>
+                        <li><a href="https://github.com/ckolivas/cgminer" target="_blank">cgminer</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Rozpocznij kopanie</strong> z parametrami:
+                    <pre>cgminer -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x</pre>
+                    <p>Lub dla cpuminer:</p>
+                    <pre>cpuminer-avx2 -a sha256d -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x -t WĄTKI</pre>
+                    <ul>
+                        <li><code>-a sha256d</code> → algorytm SHA-256</li>
+                        <li><code>-o</code> → adres kopalni</li>
+                        <li><code>-u</code> → Twój adres BSC</li>
+                        <li><code>-p x</code> → hasło (zazwyczaj x)</li>
+                        <li><code>-t WĄTKI</code> → liczba wątków CPU</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Sprawdź panel kopalni</strong>:
+                    <div style="text-align: center; margin: 10px 0;">
+                        <a href="https://pool.bitscoin.online/dashboard" target="_blank" style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            background-color: #FFD700;
+                            color: #000000;
+                            text-decoration: none;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            font-weight: bold;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                            transition: background-color 0.3s ease;
+                        "
+                        onmouseover="this.style.backgroundColor='#e6c200';"
+                        onmouseout="this.style.backgroundColor='#FFD700';"
+                        >🚀 Otwórz Panel Kopania 🚀</a>
+                    </div>
+                </li>
+            </ol>
+            <p>Potrzebujesz pomocy? Napisz: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+        </section>
+
+        <section id="weryfikacja">
+            <h2>Weryfikacja Podpisu GPG</h2>
+            <p>Dla bezpieczeństwa zalecamy weryfikację podpisu GPG pobranego portfela BitsCoin.</p>
+            <p>1. Pobierz portfel i podpis:</p>
+            <pre>wget https://bitscoin.online/download/BitsCoin-Qt.AppImage
+wget https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc</pre>
+            <p>lub wersję Windows:</p>
+            <pre>wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip
+wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc</pre>
+            <p>2. Importuj klucz publiczny BitsCoin:</p>
+            <pre>gpg --keyserver keyserver.ubuntu.com --recv-keys TWÓJ_KLUCZ_ID</pre>
+            <p>3. Zweryfikuj podpis:</p>
+            <pre>gpg --verify BitsCoin-Qt.AppImage.asc BitsCoin-Qt.AppImage</pre>
+            <p>lub dla ZIP Windows:</p>
+            <pre>gpg --verify BitsCoin-Qt-Win64.zip.asc BitsCoin-Qt-Win64.zip</pre>
+            <p>Poprawny podpis oznacza, że plik pochodzi od oficjalnego zespołu BitsCoin i nie był modyfikowany.</p>
+        </section>
+
+        <section>
+            <h2>Kontakt</h2>
+            <p>Email: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+        </section>
+
+        <section>
+            <h2>Śledź nas</h2>
+            <p><a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">👉 Odwiedź nas na Facebooku</a></p>
+        </section>
     </main>
 
     <footer>
-        <p style="background:#005ea6;color:white;padding:12px;border-radius:6px;text-align:center">© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
+        <p>© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
     </footer>
 </body>
 </html>
-
-    
-   
