@@ -1,105 +1,84 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BitsCoin (BSC) - Oficjalna Strona</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <style>
-        .sidebar {
-          position: fixed;
-          left: 0; top: 120px;
-          width: 220px;
-          background: #fffbe6;
-          color: #8a6d00;
-          border-radius: 12px;
-          padding: 20px 0;
-          box-shadow: 0 2px 16px #ffd70080;
-          z-index: 1000;
-          border: 2px solid #ffd70055;
-        }
-        .sidebar ul { list-style: none; margin: 0; padding: 0; }
-        .sidebar ul li { margin: 16px 0; }
-        .sidebar ul li a {
-          color: #b99309;
-          font-size: 1.1em;
-          text-decoration: none;
-          transition: color 0.2s, background 0.2s;
-          padding: 8px 20px;
-          display: block;
-          border-radius: 7px;
-        }
-        .sidebar ul li a:hover {
-          color: #fff;
-          background: #ffd700;
-        }
-        @media (max-width: 900px) {
-          .sidebar { position: static; width: 100%; border-radius: 0; box-shadow: none; padding: 12px; top:0; }
-        }
-        @media (min-width: 901px) {
-          body { margin-left: 240px; }
-        }
-        #chat, #ogloszenia {
-            background: linear-gradient(135deg,#fffbe6 70%,#fff7c2 100%);
-            border-radius: 16px;
-            padding: 32px 30px 30px 30px;
-            margin: 42px 0;
-            box-shadow: 0 2px 22px #ffd70020;
-            border: 1.5px solid #ffe066;
-        }
-        #chat h2, #ogloszenia h2 {
-            color: #b99309;
-            letter-spacing: 0.03em;
-            margin-top: 0;
-        }
-        #chat p, #ogloszenia p, #ogloszenia ul {
-            color: #826200;
-            font-size: 1.08em;
-        }
-        #ogloszenia ul li {
-            margin-bottom: 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px dashed #ffe066;
-        }
-        #chat iframe {
-            background: #fffde4;
-            border: 2px solid #ffe066;
-            border-radius: 9px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BitsCoin (BSC) - Oficjalna Strona</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { font-family: Arial, sans-serif; background: #fffbe6; color: #333; margin: 0; padding: 0; }
+    header { text-align: center; background: #fff7c2; padding: 20px; border-bottom: 2px solid #ffd700; }
+    header img { max-width: 240px; }
+    nav a { margin: 0 10px; color: #b99309; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; max-width: 1000px; margin: auto; }
+    section { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #ffe066; }
+    h2 { color: #b99309; }
+    pre, code { background: #fdf6d6; padding: 4px 8px; border-radius: 5px; }
+    footer { text-align: center; padding: 10px; background: #fff7c2; border-top: 2px solid #ffd700; }
+    .button-link { display: inline-block; padding: 12px 24px; background-color: #FFD700; color: #000; text-decoration: none; border-radius: 10px; font-weight: bold; }
+    .button-link:hover { background-color: #e6c200; }
+  </style>
 </head>
 <body>
-    <nav class="sidebar">
-      <ul>
-        <li><a href="#chat">🗨️ Czat użytkowników</a></li>
-        <li><a href="#ogloszenia">📢 Ogłoszenia sprzętowe</a></li>
-      </ul>
+  <header>
+    <img src="bitscoin-banner.png" alt="BitsCoin Logo" />
+    <h1>BitsCoin (BSC)</h1>
+    <p>Kryptowaluta Proof of Work | SHA-256 | 50 BSC za blok</p>
+    <nav>
+      <a href="#kopalnia">Kopalnia</a> | <a href="#czat">Czat</a> | <a href="#ogloszenia">Ogłoszenia</a> | <a href="#kontakt">Kontakt</a>
     </nav>
-    <header>
-        <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner" />
-        <h1>BitsCoin (BSC)</h1>
-        <p>Kryptowaluta Proof of Work | SHA-256 | 50 BSC za blok</p>
-        <nav>
-            <a href="index.html">PL</a> | <a href="index-en.html">EN</a>
-        </nav>
-    </header>
-    <main>
-        <!-- Zmienione linki do pobierania portfela -->
-        <section>
-            <h2>Pobierz portfel</h2>
-            <ul>
-                <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage" target="_blank" rel="noopener noreferrer">BitsCoin Core (Linux .AppImage)</a></li>
-                <li><a href="https://bitscoin.online/download/BitsCoin-Core.zip" target="_blank" rel="noopener noreferrer">BitsCoin Core (Windows .zip)</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>Kopalnia</h2>
-            <p><a href="https://pool.bitscoin.online" target="_blank">pool.bitscoin.online</a> – Oficjalna kopalnia SHA-256 (3% prowizji)</p>
-        </section>
-    </main>
-    <footer>
-        <p>© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
-    </footer>
+  </header>
+
+  <main>
+    <section>
+      <h2>Pobierz portfel</h2>
+      <ul>
+        <li><a href="https://bitscoin.online/download/BitsCoin-Core-v0.1-x86_64.AppImage" target="_blank">Linux (.AppImage)</a></li>
+        <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank">Windows (.zip)</a></li>
+      </ul>
+    </section>
+
+    <section id="kopalnia">
+      <h2>Jak kopać BitsCoin?</h2>
+      <ol>
+        <li>Pobierz i uruchom portfel. Wygeneruj swój adres BSC.</li>
+        <li>Pobierz oprogramowanie do kopania:
+          <ul>
+            <li><a href="https://github.com/LIMXTEC/cpuminer-opt/releases" target="_blank">cpuminer-opt</a></li>
+            <li><a href="https://github.com/ckolivas/cgminer" target="_blank">cgminer</a></li>
+          </ul>
+        </li>
+        <li>Uruchom koparkę z parametrami:
+          <pre>cgminer -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x</pre>
+        </li>
+      </ol>
+      <a class="button-link" href="https://pool.bitscoin.online/dashboard" target="_blank">Dashboard kopalni</a>
+    </section>
+
+    <section id="czat">
+      <h2>Czat użytkowników</h2>
+      <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;"></iframe>
+    </section>
+
+    <section id="ogloszenia">
+      <h2>Ogłoszenia: kupno/sprzedaż sprzętu</h2>
+      <ul>
+        <li>Kupię Antminer S9 – janek@example.com</li>
+        <li>Sprzedam Innosilicon T2T – tel: 600-xxx-xxx</li>
+      </ul>
+      <p>Zgłoszenia: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Email: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
+      <p><a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">Facebook</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
+  </footer>
 </body>
 </html>
