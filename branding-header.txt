@@ -1,0 +1,7 @@
+/*
+ * Projekt BitsCoin 2025
+ * Autorzy: Grupa Siedemtrzy
+ * Fork Bitcoin Core – niezależna sieć BitsCoin
+ * © 2025 Grupa Siedemtrzy. Wszelkie prawa zastrzeżone.
+ */
+
