@@ -3,135 +3,463 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BitsCoin (BSC) - Oficjalna Strona</title>
+    <title>BitsCoin (BSC) - Kryptowaluta SHA-256 | Oficjalna Strona 2025</title>
+    <meta name="description" content="BitsCoin - polska kryptowaluta Proof of Work. Web Wallet, Mining Pool, Block Explorer. Kopaj BSC już dziś!" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <style>
+        /* Enhanced Modern Styling */
+        :root {
+            --primary-gold: #FFD700;
+            --dark-gold: #B99309;
+            --light-gold: #FFFBE6;
+            --accent: #FF6B35;
+            --dark-bg: #1a1a1a;
+            --gradient: linear-gradient(135deg, #FFD700 0%, #FF6B35 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff7e6 100%);
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 900;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Service Cards Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--primary-gold);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--dark-gold);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,107,53,0.4);
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            background: var(--dark-bg);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .quick-actions h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--primary-gold);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gold);
+            color: black;
+        }
+
+        /* Updated Sidebar */
         .sidebar {
-          position: fixed;
-          left: 0; top: 120px;
-          width: 220px;
-          background: #fffbe6;
-          color: #8a6d00;
-          border-radius: 12px;
-          padding: 20px 0;
-          box-shadow: 0 2px 16px #ffd70080;
-          z-index: 1000;
-          border: 2px solid #ffd70055;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(180deg, var(--light-gold) 0%, #fff7c2 100%);
+            color: var(--dark-gold);
+            padding: 2rem 0;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
-        .sidebar ul { list-style: none; margin: 0; padding: 0; }
-        .sidebar ul li { margin: 16px 0; }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 1rem 0;
+        }
+
         .sidebar ul li a {
-          color: #b99309;
-          font-size: 1.1em;
-          text-decoration: none;
-          transition: color 0.2s, background 0.2s;
-          padding: 8px 20px;
-          display: block;
-          border-radius: 7px;
+            color: var(--dark-gold);
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 1rem 2rem;
+            display: block;
+            border-radius: 0 50px 50px 0;
+            margin-right: 2rem;
         }
+
         .sidebar ul li a:hover {
-          color: #fff;
-          background: #ffd700;
+            color: white;
+            background: var(--gradient);
+            transform: translateX(10px);
         }
-        @media (max-width: 900px) {
-          .sidebar { position: static; width: 100%; border-radius: 0; box-shadow: none; padding: 12px; top:0; }
+
+        /* Enhanced Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
         }
-        @media (min-width: 901px) {
-          body { margin-left: 240px; }
+
+        .section-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-gold);
         }
+
+        .section-card h2 {
+            color: var(--dark-gold);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        /* Chat and Announcements */
         #chat, #ogloszenia {
-            background: linear-gradient(135deg,#fffbe6 70%,#fff7c2 100%);
-            border-radius: 16px;
-            padding: 32px 30px 30px 30px;
-            margin: 42px 0;
-            box-shadow: 0 2px 22px #ffd70020;
-            border: 1.5px solid #ffe066;
+            background: linear-gradient(135deg, var(--light-gold) 70%, #fff7c2 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(255,215,0,0.1);
+            border: 2px solid #ffe066;
         }
-        #chat h2, #ogloszenia h2 {
-            color: #b99309;
-            letter-spacing: 0.03em;
-            margin-top: 0;
-        }
-        #chat p, #ogloszenia p, #ogloszenia ul {
-            color: #826200;
-            font-size: 1.08em;
-        }
-        #ogloszenia ul li {
-            margin-bottom: 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px dashed #ffe066;
-        }
+
         #chat iframe {
             background: #fffde4;
             border: 2px solid #ffe066;
-            border-radius: 9px;
+            border-radius: 15px;
+            width: 100%;
+            min-height: 400px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
-    <!-- Sidebar menu -->
-    <nav class="sidebar">
-      <ul>
-        <li><a href="#chat">🗨️ Czat Użytkowników</a></li>
-        <li><a href="#ogloszenia">📢 Ogłoszenia Sprzętu</a></li>
-      </ul>
+    <!-- Sidebar Toggle -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+
+    <!-- Enhanced Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#hero">🏠 Start</a></li>
+            <li><a href="#services">🌐 Usługi</a></li>
+            <li><a href="#chat">🗨️ Czat</a></li>
+            <li><a href="#ogloszenia">📢 Ogłoszenia</a></li>
+            <li><a href="#kopalnia">⛏️ Mining</a></li>
+            <li><a href="#download">📱 Pobierz</a></li>
+            <li><a href="#kontakt">📧 Kontakt</a></li>
+        </ul>
     </nav>
 
-    <header>
-        <img src="bitscoin-banner.png" alt="BitsCoin Logo" class="banner" />
-        <h1>BitsCoin (BSC)</h1>
-        <p>Kryptowaluta Proof of Work | SHA-256 | 50 BSC za blok</p>
-        <nav>
-            <a href="index.html">PL</a> | <a href="index-en.html">EN</a>
-        </nav>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>₿ BitsCoin</h1>
+            <p class="hero-subtitle">Polska kryptowaluta Proof of Work | SHA-256 | 50 BSC za blok</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">31M</span>
+                    <span>Całkowita Podaż</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">300s</span>
+                    <span>Czas Bloku</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50 BSC</span>
+                    <span>Nagroda za Blok</span>
+                </div>
+            </div>
 
-    <main>
+            <div class="action-buttons">
+                <a href="https://bitscoin.online" class="btn-primary" target="_blank">🚀 Otwórz Web Wallet</a>
+                <a href="https://pool.bitscoin.online" class="btn-primary" target="_blank">⛏️ Zacznij Kopanie</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid" id="services">
+        <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Web Wallet</h3>
+            <p>Zarządzaj swoimi BitsCoin online. Nowoczesny interfejs, bezpieczne klucze, real-time transactions.</p>
+            <a href="https://bitscoin.online" class="btn-primary" target="_blank">Otwórz Portfel</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3>Block Explorer</h3>
+            <p>Przeglądaj blockchain BitsCoin w czasie rzeczywistym. Sprawdzaj transakcje, bloki i statystyki sieci.</p>
+            <a href="https://explorer.bitscoin.online" class="btn-primary" target="_blank">Eksplorator</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">⛏️</div>
+            <h3>Mining Pool</h3>
+            <p>Oficjalna kopalnia SHA-256 z prowizją 3%. Stabilne połączenia, regularne wypłaty.</p>
+            <a href="https://pool.bitscoin.online" class="btn-primary" target="_blank">Kopalnia</a>
+        </div>
+
+        <div class="service-card" id="download">
+            <div class="service-icon">📱</div>
+            <h3>Desktop Wallet</h3>
+            <p>Pobierz oficjalny portfel BitsCoin dla Linux i Windows z pełną weryfikacją GPG.</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://bitscoin.pl/bsc-wallet/BitsCoin-Core-v0.1-x86_64.AppImage" class="btn-secondary" target="_blank">Linux</a>
+                <a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" class="btn-secondary" target="_blank">Windows</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <h2>Rozpocznij przygodę z BitsCoin</h2>
+        <p>Wszystko czego potrzebujesz do kopania i używania BSC</p>
+        <div class="action-buttons">
+            <a href="#kopalnia" class="btn-secondary">📖 Jak kopać?</a>
+            <a href="#chat" class="btn-secondary">💬 Społeczność</a>
+            <a href="mailto:kontakt@bitscoin.pl" class="btn-secondary">📧 Kontakt</a>
+            <a href="https://www.facebook.com/profile.php?id=61576327217137" class="btn-secondary" target="_blank">📘 Facebook</a>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <main class="content-section">
         <section id="chat">
-          <h2>🗨️ Czat Użytkowników BitsCoin</h2>
-          <iframe src="https://tlk.io/bitscoin" style="width:100%;min-height:400px;border:0;"></iframe>
-          <p>Dołącz do rozmowy i poznaj innych użytkowników BitsCoin! (tlk.io/bitscoin)</p>
+            <h2>🗨️ Czat Użytkowników BitsCoin</h2>
+            <iframe src="https://tlk.io/bitscoin" style="border:0;"></iframe>
+            <p>Dołącz do rozmowy i poznaj innych użytkowników BitsCoin! (tlk.io/bitscoin)</p>
         </section>
 
         <section id="ogloszenia">
-          <h2>📢 Ogłoszenia sprzętu kopiącego (kupno/sprzedaż)</h2>
-          <ul>
-            <li><b>Kupno</b> – Antminer S9, kontakt: <a href="mailto:janek@example.com">janek@example.com</a></li>
-            <li><b>Sprzedaż</b> – Innosilicon T2T, kontakt: 600-xxx-xxx</li>
-            <li><b>Kupno</b> – RX580 8GB, kontakt: <a href="mailto:adam@example.com">adam@example.com</a></li>
-          </ul>
-          <p>Chcesz dodać ogłoszenie? Napisz do nas: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
-        </section>
-
-        <section>
-            <h2>O Projekcie</h2>
-            <p>BitsCoin to nowa kryptowaluta Proof of Work oparta na SHA-256 z nagrodą 50 BSC za blok i czasem bloku 300 sekund. Całkowita podaż wynosi 31 milionów BSC.</p>
-        </section>
-
-        <section>
-            <h2>Pobierz Portfel</h2>
+            <h2>📢 Ogłoszenia sprzętu kopiącego (kupno/sprzedaż)</h2>
             <ul>
-                <li><a href="https://bitscoin.pl/bsc-wallet/BitsCoin-Core-v0.1-x86_64.AppImage" target="_blank">Linux (.AppImage)</a></li>
-                <li><a href="https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc" target="_blank">Podpis GPG (.asc) — Linux</a></li>
-                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip" target="_blank">Windows (.zip)</a></li>
-                <li><a href="https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc" target="_blank">Podpis GPG (.asc) — Windows</a></li>
-                <li><a href="https://bitscoin.online/download/bitscoin-backup.zip" target="_blank">Kopia zapasowa portfela (ZIP)</a></li>
+                <li><b>Kupno</b> – Antminer S9, kontakt: <a href="mailto:janek@example.com">janek@example.com</a></li>
+                <li><b>Sprzedaż</b> – Innosilicon T2T, kontakt: 600-xxx-xxx</li>
+                <li><b>Kupno</b> – RX580 8GB, kontakt: <a href="mailto:adam@example.com">adam@example.com</a></li>
             </ul>
+            <p>Chcesz dodać ogłoszenie? Napisz do nas: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
         </section>
 
-        <section>
-            <h2>Eksplorator</h2>
-            <p><a href="#">explorer.bitscoin.pl</a> – wkrótce dostępny</p>
-        </section>
+        <div class="section-card">
+            <h2>O Projekcie BitsCoin</h2>
+            <p>BitsCoin to innowacyjna polska kryptowaluta Proof of Work oparta na algorytmie SHA-256. Oferujemy nagrody 50 BSC za blok z czasem bloku 300 sekund. Całkowita podaż wynosi 31 milionów BSC, co czyni ją deficytowym aktywem cyfrowym o kontrolowanej inflacji.</p>
+        </div>
 
-        <section>
-            <h2>Kopalnia</h2>
-            <p><a href="https://pool.bitscoin.online" target="_blank">pool.bitscoin.online</a> – Oficjalna kopalnia SHA-256 (prowizja 3%)</p>
-        </section>
-
-        <section id="kopalnia">
-            <h2>Jak kopać BitsCoin?</h2>
+        <section class="section-card" id="kopalnia">
+            <h2>⛏️ Jak kopać BitsCoin?</h2>
             <ol>
                 <li>
                     <strong>Pobierz portfel</strong>:
@@ -153,69 +481,65 @@
                     <pre>cgminer -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x</pre>
                     <p>Lub dla cpuminer:</p>
                     <pre>cpuminer-avx2 -a sha256d -o stratum+tcp://pool.bitscoin.online:3333 -u TWÓJ_ADRES_BSC -p x -t WĄTKI</pre>
-                    <ul>
-                        <li><code>-a sha256d</code> → algorytm SHA-256</li>
-                        <li><code>-o</code> → adres kopalni</li>
-                        <li><code>-u</code> → Twój adres BSC</li>
-                        <li><code>-p x</code> → hasło (zazwyczaj x)</li>
-                        <li><code>-t WĄTKI</code> → liczba wątków CPU</li>
-                    </ul>
                 </li>
                 <li>
                     <strong>Sprawdź panel kopalni</strong>:
-                    <div style="text-align: center; margin: 10px 0;">
-                        <a href="https://pool.bitscoin.online/dashboard" target="_blank" style="
-                            display: inline-block;
-                            padding: 12px 24px;
-                            background-color: #FFD700;
-                            color: #000000;
-                            text-decoration: none;
-                            border-radius: 10px;
-                            font-size: 16px;
-                            font-weight: bold;
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-                            transition: background-color 0.3s ease;
-                        "
-                        onmouseover="this.style.backgroundColor='#e6c200';"
-                        onmouseout="this.style.backgroundColor='#FFD700';"
-                        >🚀 Otwórz Panel Kopania 🚀</a>
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <a href="https://pool.bitscoin.online/dashboard" target="_blank" class="btn-primary">🚀 Otwórz Panel Kopania 🚀</a>
                     </div>
                 </li>
             </ol>
             <p>Potrzebujesz pomocy? Napisz: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
         </section>
 
-        <section id="weryfikacja">
-            <h2>Weryfikacja Podpisu GPG</h2>
+        <div class="section-card" id="weryfikacja">
+            <h2>🔐 Weryfikacja Podpisu GPG</h2>
             <p>Dla bezpieczeństwa zalecamy weryfikację podpisu GPG pobranego portfela BitsCoin.</p>
-            <p>1. Pobierz portfel i podpis:</p>
             <pre>wget https://bitscoin.online/download/BitsCoin-Qt.AppImage
-wget https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc</pre>
-            <p>lub wersję Windows:</p>
-            <pre>wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip
-wget https://bitscoin.online/download/BitsCoin-Qt-Win64.zip.asc</pre>
-            <p>2. Importuj klucz publiczny BitsCoin:</p>
-            <pre>gpg --keyserver keyserver.ubuntu.com --recv-keys TWÓJ_KLUCZ_ID</pre>
-            <p>3. Zweryfikuj podpis:</p>
-            <pre>gpg --verify BitsCoin-Qt.AppImage.asc BitsCoin-Qt.AppImage</pre>
-            <p>lub dla ZIP Windows:</p>
-            <pre>gpg --verify BitsCoin-Qt-Win64.zip.asc BitsCoin-Qt-Win64.zip</pre>
-            <p>Poprawny podpis oznacza, że plik pochodzi od oficjalnego zespołu BitsCoin i nie był modyfikowany.</p>
-        </section>
+wget https://bitscoin.online/download/BitsCoin-Qt.AppImage.asc
+gpg --verify BitsCoin-Qt.AppImage.asc BitsCoin-Qt.AppImage</pre>
+        </div>
 
-        <section>
-            <h2>Kontakt</h2>
+        <div class="section-card" id="kontakt">
+            <h2>📧 Kontakt</h2>
             <p>Email: <a href="mailto:kontakt@bitscoin.pl">kontakt@bitscoin.pl</a></p>
-        </section>
-
-        <section>
-            <h2>Śledź nas</h2>
-            <p><a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">👉 Odwiedź nas na Facebooku</a></p>
-        </section>
+            <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61576327217137" target="_blank">BitsCoin Official</a></p>
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 BitsCoin. Projekt Grupa SiedemTrzy.</p>
+        <p>© 2025 BitsCoin. Projekt Grupa SiedemTrzy. Made with ❤️ in Poland.</p>
     </footer>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.sidebar-toggle');
+            
+            if (!sidebar.contains(event.target) && !toggle.contains(event.target)) {
+                sidebar.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
